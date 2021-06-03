@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom"
+import './style.css'
+
 const Header = () => {
     return (
         <>
             <header>
-                <h1>WallyDeep</h1>
-                <h2>Photo search in React</h2>
+                <h1 className="brand">
+                    <Link to='/' className="brand-text">
+                        WallyDeep
+                    </Link>
+                </h1>
+                <p>Photo search in React</p>
             </header>
         </>
     );
