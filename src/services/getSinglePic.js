@@ -1,4 +1,4 @@
-import { ACCESS_KEY, API_URL_SEARCH } from "./settings";
+import { ACCESS_KEY, API_URL_PHOTO } from "./settings";
 
 /* export default function getPics(keyword) {
 
@@ -21,24 +21,25 @@ import { ACCESS_KEY, API_URL_SEARCH } from "./settings";
         .then(fromApiResponseToGifs);
 } */
 
-export default function getPics({ keyword = 'ferrari' } = {}) {
+export default function getSinglePic({ id }) {
 
-    const apiURL = `${API_URL_SEARCH}?page=1&query="${keyword}"&client_id=${ACCESS_KEY}`
+    const apiURL = `${API_URL_PHOTO}/${id}?client_id=${ACCESS_KEY}`
 
     return (
         fetch(apiURL)
             .then(res => res.json())
             .then(apiResponse => {
-                const { results } = apiResponse
-                const pics = results.map(image => {
-                    const { id, description, alt_description } = image
-                    const { name } = image.user
-                    const { small } = image.urls
-                    /* const { urls } = urls.small */
-                    return { id, description, alt_description, small, name }
-                })
-                console.log(pics)
-                return pics;
+                const data = apiResponse
+                //console.log(data)
+
+                const { id, description, alt_description } = data
+                const { name } = data.user
+                const { regular } = data.urls
+                /* const { urls } = urls.small */
+                return { id, description, alt_description, regular, name }
+                /*  return pics; 
+                console.log(pic)
+                return pic*/
             })
     )
 }

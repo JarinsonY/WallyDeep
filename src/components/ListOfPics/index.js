@@ -9,11 +9,15 @@ const ListOfPics = ({ keyword }) => {
         getPics({ keyword }).then(pics => setPics(pics))
     }, [keyword])
 
-    return (
-        pics.map(photo => (
-            <Pic key={photo.id} title={photo.description} alt={photo.alt_description} src={photo.small} />
-        ))
-    )
+
+
+    return <div className="ListOfPics">
+        {
+            pics.map(({ id, description, alt_description, small }) => (
+                <Pic key={id} id={id} title={description} alt={alt_description} src={small} />
+            ))
+        }
+    </div>
 }
 
 export default ListOfPics;

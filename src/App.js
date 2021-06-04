@@ -7,6 +7,7 @@ import {
 import HeaderApp from './components/HeaderApp';
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
+import PicDetailPage from './components/PicDetailPage';
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
         <Switch>
           <Route path='/results/:keyword'>
             <SearchResults />
+          </Route>
+          <Route path='/pic/:id'>
+            <PicDetailPage />
           </Route>
         </Switch>
       </Router>

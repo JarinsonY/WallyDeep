@@ -1,9 +1,11 @@
-export default function Pic ({id, title , alt_description , src})  {
+import { Link } from "react-router-dom"
+
+export default function Pic({ id, title, alt_description, src }) {
     return (
-        <div>
-            <h4>{title}</h4>
-            <small>{id}</small><br />
-            <img alt={alt_description} src={src}/>
-        </div> 
+        <div className="Pic">
+            <Link to={`/pic/${id}`}>
+                <img alt={alt_description} src={src} />
+            </Link>
+        </div>
     );
 }
