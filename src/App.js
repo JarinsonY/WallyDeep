@@ -4,10 +4,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import HeaderApp from './components/HeaderApp';
+
 import SearchBar from './components/SearchBar';
 import SearchResults from './components/SearchResults';
 import PicDetailPage from './components/PicDetailPage';
+import HomePage from './components/HomePage';
 
 function App() {
 
@@ -15,14 +16,12 @@ function App() {
     <div className="App">
 
       <Router>
-        <div>
+        {/* <div>
           <HeaderApp />
         </div>
         <div>
           <SearchBar />
-        </div>
-
-        <hr />
+        </div> */}
 
         <Switch>
           <Route path='/results/:keyword'>
@@ -31,7 +30,11 @@ function App() {
           <Route path='/pic/:id'>
             <PicDetailPage />
           </Route>
+          <Route path='/'>
+            <HomePage />
+          </Route>
         </Switch>
+
       </Router>
     </div>
   );

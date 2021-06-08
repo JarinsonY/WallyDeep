@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import getSinglePic from "../../services/getSinglePic";
 import Pic from "../Pic"
+import './PicDetailPage.css'
 
 const PicDetailPage = () => {
 

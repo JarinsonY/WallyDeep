@@ -1,3 +1,4 @@
+import HeaderApp from '../HeaderApp';
 import ListOfPics from "../ListOfPics"
 import { useParams } from "react-router";
 
@@ -7,6 +8,7 @@ const SearchResults = () => {
 
     return (
         <>
+            <HeaderApp />
             <h1>Resultados de {keyword}</h1>
             <ListOfPics keyword={keyword} />
         </>

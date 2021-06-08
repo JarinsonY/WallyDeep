@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useHistory } from "react-router"
-import './style.css'
+import './SearchBar.css'
 
 export default function SearchBar() {
 
@@ -19,8 +19,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <div className="search-bar">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="search-bar">
           <input
             id="search-input"
             onChange={handleChange}
@@ -28,12 +27,12 @@ export default function SearchBar() {
             placeholder="Search your photos..."
             value={keyword}
             className="search-input"
+            autoComplete="off"
           />
           <button type="submit" className="search-btn">
             Search
           </button>
         </form>
-      </div>
     </>
   )
 }
