@@ -1,6 +1,6 @@
 .header-content {
     display: flex;
-    padding: 0 40px;
+    padding: 0 8rem;
     justify-content: space-between;
 }
 
@@ -50,3 +50,9 @@
     text-shadow: #474747 3px 5px 2px;
 }
  */
+
+ @media screen and (max-width: 470px) {
+    .header-content{
+        display: block;
+    }
+}

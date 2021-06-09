@@ -1,0 +1,43 @@
+.Pic img {
+    width: 100%;
+    object-fit: contain;
+    vertical-align: top;
+}
+
+.Pic {
+    margin-bottom: 0;
+}
+
+.Pic,
+.Pic-link {
+    height: 100%;
+}
+
+.Pic-link img {
+    height: inherit;
+    object-fit: cover;
+}
+
+.Pic:nth-child(11n + 1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.Pic:nth-child(8n + 1) {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+.Pic:nth-child(10n + 3) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+@media screen and (max-width: 45rem) {
+    .Gif:nth-child(11n + 1),
+    .Gif:nth-child(8n + 1),
+    .Gif:nth-child(10n + 3) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import HeaderApp from '../HeaderApp';
 import getSinglePic from "../../services/getSinglePic";
 import Pic from "../Pic"
 import './PicDetailPage.css'
@@ -20,8 +21,11 @@ const PicDetailPage = () => {
 
     return (
         <>
-            <h1>Image {id}</h1>
-            <Pic key={pic.id} title={pic.description} alt={pic.alt_description} src={pic.regular} />
+            <HeaderApp />
+            <h3>Image {id}</h3>
+            <div className="detail-pic">
+                <Pic key={pic.id} title={pic.description} alt={pic.alt_description} src={pic.regular} />
+            </div>
         </>
     );
 }

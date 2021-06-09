@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import getPics from "../../services/getPics";
 import Pic from "../Pic";
+import './ListOfPics.css'
 
 const ListOfPics = ({ keyword }) => {
     const [pics, setPics] = useState([])
