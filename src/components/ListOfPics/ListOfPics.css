@@ -5,7 +5,7 @@
 }
 
 .ListOfPics {
-    margin: auto 20px;
+    margin: 20px;
     display: grid;
     min-height: 100vh;
     grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));

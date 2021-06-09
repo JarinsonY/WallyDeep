@@ -23,7 +23,7 @@ import { ACCESS_KEY, API_URL_SEARCH } from "./settings";
 
 export default function getPics({ keyword = 'ferrari' } = {}) {
 
-    const apiURL = `${API_URL_SEARCH}?page=1&query="${keyword}"&client_id=${ACCESS_KEY}`
+    const apiURL = `${API_URL_SEARCH}?per_page=11&query="${keyword}"&client_id=${ACCESS_KEY}`
 
     return (
         fetch(apiURL)
