@@ -14,8 +14,8 @@ const ListOfPics = ({ keyword }) => {
 
     return <div className="ListOfPics">
         {
-            pics.map(({ id, description, alt_description, small }) => (
-                <Pic key={id} id={id} title={description} alt={alt_description} src={small} />
+            pics.map(({ id, alt_description, small }) => (
+                <Pic key={id} id={id} alt={alt_description} src={small} />
             ))
         }
     </div>

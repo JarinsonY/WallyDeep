@@ -31,11 +31,11 @@ export default function getPics({ keyword = 'ferrari' } = {}) {
             .then(apiResponse => {
                 const { results } = apiResponse
                 const pics = results.map(image => {
-                    const { id, description, alt_description } = image
+                    const { id, alt_description } = image
                     const { name } = image.user
                     const { small } = image.urls
                     /* const { urls } = urls.small */
-                    return { id, description, alt_description, small, name }
+                    return { id, alt_description, small, name }
                 })
                 console.log(pics)
                 return pics;

@@ -4,6 +4,7 @@ import HeaderApp from '../HeaderApp';
 import getSinglePic from "../../services/getSinglePic";
 import Pic from "../Pic"
 import './PicDetailPage.css'
+import DetailPic from "../DetailPic";
 
 const PicDetailPage = () => {
 
@@ -19,13 +20,20 @@ const PicDetailPage = () => {
             })
     }, [id])
 
+    console.log(pic)
     return (
         <>
             <HeaderApp />
             <h3>Image {id}</h3>
-            <div className="detail-pic">
-                <Pic key={pic.id} title={pic.description} alt={pic.alt_description} src={pic.regular} />
+            <div className="detail">
+                <div className="detail-pic">
+                    <Pic key={pic.id} id={pic.id} alt={pic.alt_description} src={pic.regular} />
+                </div>
+                <div className="detail-pic-info">
+                    <DetailPic title={pic.description} nameAutor={pic.name} location={pic.title} />
+                </div>
             </div>
+
         </>
     );
 }

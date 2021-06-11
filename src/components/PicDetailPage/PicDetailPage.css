@@ -2,10 +2,54 @@ body {
     background-attachment: fixed;
 }
 
-.detail-pic {
-    margin-bottom: .5rem;
+h3{
+    margin-top: 0;
 }
 
+.detail {
+    display: flex;
+    margin: 20px;
+    max-height: 100vh;
+    justify-content: center;
+    text-align: center;
+
+    /* display: flex;
+    max-height: 100vh;
+    position: fixed;
+    width: 100%; */
+}
+
+/* .detail-pic {
+    margin-bottom: .5rem;
+    display: contents;
+     max-width: 80%;
+} */
+
 .detail-pic img {
-    max-width: 80%;
+    max-height: 37rem;
+   /*  width: auto; */
+}
+
+.detail-pic-info {
+    /* background-color: darksalmon; */
+    color: white;
+    text-align: justify;
+    padding: 0 20px;
+    max-width: 400px;
+}
+
+@media screen and (max-width: 1170px) {
+    h3{
+        margin-top: 1em;
+    }
+
+    .detail {
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-pic-info {
+        width: 100%;
+    }
 }

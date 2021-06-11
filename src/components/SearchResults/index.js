@@ -9,7 +9,7 @@ const SearchResults = () => {
     return (
         <>
             <HeaderApp />
-            <h1>Resultados de {keyword}</h1>
+            <h1 style={{marginTop: 0}}>Resultados de {keyword}</h1>
             <ListOfPics keyword={keyword} />
         </>
     );
