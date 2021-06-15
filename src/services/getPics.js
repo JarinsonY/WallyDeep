@@ -37,7 +37,7 @@ export default function getPics({ keyword = 'ferrari' } = {}) {
                     /* const { urls } = urls.small */
                     return { id, alt_description, small, name }
                 })
-                console.log(pics)
+                /* console.log(pics) */
                 return pics;
             })
     )

@@ -30,7 +30,7 @@ export default function getSinglePic({ id }) {
             .then(res => res.json())
             .then(apiResponse => {
                 const data = apiResponse
-                //console.log(data)
+                /* console.log(data) */
 
                 const { id, description, alt_description } = data
                 const { name } = data.user
