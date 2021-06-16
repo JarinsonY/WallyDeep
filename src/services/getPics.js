@@ -21,9 +21,9 @@ import { ACCESS_KEY, API_URL_SEARCH } from "./settings";
         .then(fromApiResponseToGifs);
 } */
 
-export default function getPics({ keyword = 'ferrari' } = {}) {
+export default function getPics({ keyword = 'ferrari', page = 1 } = {}) {
 
-    const apiURL = `${API_URL_SEARCH}?per_page=11&query="${keyword}"&client_id=${ACCESS_KEY}`
+    const apiURL = `${API_URL_SEARCH}?page=${page}&per_page=13&query="${keyword}"&client_id=${ACCESS_KEY}`
 
     return (
         fetch(apiURL)
@@ -37,6 +37,7 @@ export default function getPics({ keyword = 'ferrari' } = {}) {
                     /* const { urls } = urls.small */
                     return { id, alt_description, small, name }
                 })
+                /* console.log('ApiURL: ', apiURL) */
                 /* console.log(pics) */
                 return pics;
             })

@@ -3,14 +3,14 @@ import getPics from "../../services/getPics";
 import Pic from "../Pic";
 import './ListOfPics.css'
 
-const ListOfPics = ({ keyword }) => {
+const ListOfPics = ({ keyword, page }) => {
     const [pics, setPics] = useState([])
 
+
     useEffect(() => {
-        getPics({ keyword }).then(pics => setPics(pics))
-    }, [keyword])
-
-
+        getPics({ keyword, page }).then(pics => setPics(pics))
+        /* console.log('Page: ', page) */
+    }, [keyword, page])
 
     return <div className="ListOfPics">
         {
