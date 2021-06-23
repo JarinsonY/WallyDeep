@@ -14,9 +14,11 @@ const SearchResults = () => {
 
     const previousPage = () => {
         setPage(prev => prev - 1)
+        window.scrollTo(0, 0);
     }
     const nextPage = () => {
         setPage(prev => prev + 1)
+        window.scrollTo(0, 0);
     }
 
     return (

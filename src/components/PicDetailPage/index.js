@@ -27,7 +27,7 @@ const PicDetailPage = () => {
             <h3>Image {id}</h3>
             <div className="detail">
                 <div className="detail-pic">
-                    <Pic key={pic.id} id={pic.id} alt={pic.alt_description} src={pic.regular} />
+                    <Pic key={pic.id} id={pic.id} alt={pic.alt_description} src={pic.full} />
                 </div>
                 <div className="detail-pic-info">
                     <DetailPic title={pic.description} nameAutor={pic.name} location={pic.title} />

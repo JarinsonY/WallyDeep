@@ -33,9 +33,9 @@ export default function getPics({ keyword = 'ferrari', page = 1 } = {}) {
                 const pics = results.map(image => {
                     const { id, alt_description } = image
                     const { name } = image.user
-                    const { small } = image.urls
+                    const { regular } = image.urls
                     /* const { urls } = urls.small */
-                    return { id, alt_description, small, name }
+                    return { id, alt_description, regular, name }
                 })
                 /* console.log('ApiURL: ', apiURL) */
                 /* console.log(pics) */
