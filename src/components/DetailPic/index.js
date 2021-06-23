@@ -1,6 +1,7 @@
 import './DetailPic.css'
 
-const DetailPic = ({ title, nameAutor, location }) => {
+const DetailPic = ({ title, nameAutor, location, download }) => {
+
     return (
         <>
             <p><b>Title: </b>{title ? title : 'No Title'}</p>
@@ -12,6 +13,9 @@ const DetailPic = ({ title, nameAutor, location }) => {
                     rel="noopener noreferrer">Unsplash
                 </a>.
             </p>
+            <a href={download + '?force=true'} download target="_blank" rel="noreferrer">
+                <button className="download-btn">Download</button>
+            </a>
         </>
     );
 }

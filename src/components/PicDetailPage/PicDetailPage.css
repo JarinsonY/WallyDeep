@@ -2,7 +2,7 @@ body {
     background-attachment: fixed;
 }
 
-h3{
+h3 {
     margin-top: 0;
     color: #ffffff;
 }
@@ -31,7 +31,8 @@ h3{
 
 .detail-pic img {
     max-height: 37rem;
-   /*  width: auto; */
+    object-fit: contain;
+    width: auto;
 }
 
 .detail-pic-info {
@@ -42,14 +43,19 @@ h3{
 }
 
 @media screen and (max-width: 1170px) {
-    h3{
+    h3 {
         margin-top: 1em;
     }
 
     .detail {
-        width: auto;
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
+        max-height: fit-content;
+        width: auto;
+    }
+
+    .detail-pic img {
+        width: 100%;
     }
 
     .detail-pic-info {

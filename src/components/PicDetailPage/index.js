@@ -19,8 +19,7 @@ const PicDetailPage = () => {
                 console.log(e)
             })
     }, [id])
-
-    console.log(pic)
+    
     return (
         <>
             <HeaderApp />
@@ -30,7 +29,7 @@ const PicDetailPage = () => {
                     <Pic key={pic.id} id={pic.id} alt={pic.alt_description} src={pic.full} />
                 </div>
                 <div className="detail-pic-info">
-                    <DetailPic title={pic.description} nameAutor={pic.name} location={pic.title} />
+                    <DetailPic title={pic.description} nameAutor={pic.name} location={pic.title} download={pic.download} />
                 </div>
             </div>
 

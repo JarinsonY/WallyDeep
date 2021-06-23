@@ -36,8 +36,9 @@ export default function getSinglePic({ id }) {
                 const { name } = data.user
                 const { full } = data.urls
                 const { title } = data.location
+                const { download } = data.links
                 /* const { urls } = urls.small */
-                return { id, description, alt_description, full, name, title }
+                return { id, description, alt_description, full, name, title, download }
                 /*  return pics; 
                 console.log(pic)
                 return pic*/
