@@ -32,7 +32,7 @@ const SearchResults = () => {
             ? <Spinner />
             : <>
                 {pics.length === 0
-                    ? <h3>No se encontraron más resultados</h3>
+                    ? <h3>No results found</h3>
                     : <ListOfPics pics={pics} />}
 
 
@@ -46,7 +46,7 @@ const SearchResults = () => {
                     }
 
                     {pics.length < 13
-                        ? <h3 style={{ color: "black" }}>No se encontraron más resultados</h3>
+                        ? <h3 style={{ color: "black" }}>No more results found</h3>
                         :
                         <button className="btn-navegation" onClick={nextPage}>
                             <ArrowRight width={35} height={35} />
