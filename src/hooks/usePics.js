@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import getPics from "../services/getPics";
 
-export function usePics({ keyword, page } = { keyword: 'random' }) {
+const INITIAL_PAGE = 1;
+
+export function usePics({ keyword } = { keyword: 'random' }) {
     const [loading, setLoading] = useState(false)
     const [pics, setPics] = useState([])
+    const [page, setPage] = useState(INITIAL_PAGE)
 
     useEffect(() => {
         setLoading(true)
@@ -16,6 +19,6 @@ export function usePics({ keyword, page } = { keyword: 'random' }) {
             })
     }, [keyword, page])
 
-    return { loading, pics }
+    return { loading, pics, page, setPage }
 
 }

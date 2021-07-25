@@ -3,18 +3,18 @@ import ListOfPics from "../ListOfPics"
 import ArrowLeft from "../Icons/ArrowLeft"
 import ArrowRight from "../Icons/ArrowRight"
 import { useParams } from "react-router";
-import { useState } from 'react';
 import './SearchResults.css'
 import { usePics } from '../../hooks/usePics';
 import Spinner from "../Spinner";
+import { useEffect } from 'react';
 
 const SearchResults = () => {
 
     const { keyword } = useParams()
 
-    const [page, setPage] = useState(1)
+    /* const [page, setPage] = useState(1) */
 
-    const { loading, pics } = usePics({ keyword, page })
+    const { loading, pics, page, setPage } = usePics({ keyword })
 
     const previousPage = () => {
         setPage(prev => prev - 1)
@@ -25,6 +25,10 @@ const SearchResults = () => {
         window.scrollTo(0, 0);
     }
 
+    useEffect(() => {
+        console.log('Page: ' + page)
+    }, [page])
+
     return <>
         <HeaderApp />
         <h1 className="results-title">Results of {keyword}</h1>
@@ -33,7 +37,8 @@ const SearchResults = () => {
             : <>
                 {pics.length === 0
                     ? <h3>No results found</h3>
-                    : <ListOfPics pics={pics} />}
+                    : <ListOfPics pics={pics} />
+                }
 
 
                 <div className="buttons">
