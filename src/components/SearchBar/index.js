@@ -24,7 +24,7 @@ export default function SearchBar() {
             id="search-input"
             onChange={handleChange}
             type="text"
-            placeholder="Search your photos..."
+            placeholder="Search pics here..."
             value={keyword}
             className="search-input"
             autoComplete="off"
