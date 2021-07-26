@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "WallyDeep",
+  "name": "WallyDeep",
+  "description": "Application to search for wallpapers for knowledge applicability purposes, using the Unsplash API.",
   "icons": [
     {
       "src": "favicon.ico",

@@ -6,7 +6,7 @@ p {
     font-size: x-small;
 }
 
-.download-btn {
+.btn {
     background: black;
     /* border-top-right-radius: 3px;
     border-bottom-right-radius: 3px; */
@@ -17,11 +17,24 @@ p {
     font-size: medium;
     font-weight: bold;
     transition: 0.3s ease all;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
-.download-btn:hover {
+.btn:hover {
     color: rgb(52, 8, 100);
     background: rgb(46, 195, 202);
     border: 7px solid rgb(46, 195, 202);
-} 
+}
+
+.t-area{
+    display: flex;
+}
+
+textarea{
+    width: 750px;
+    font-family: inherit;
+    resize: none;
+    height: fit-content;
+    -webkit-appearance: none;
+}
