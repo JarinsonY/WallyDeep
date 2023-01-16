@@ -2,7 +2,7 @@ import HeaderApp from '../HeaderApp';
 import ListOfPics from "../ListOfPics"
 import ArrowLeft from "../Icons/ArrowLeft"
 import ArrowRight from "../Icons/ArrowRight"
-import { useHistory, useLocation, useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import './SearchResults.css'
 import { usePics } from '../../hooks/usePics';
 import Spinner from "../Spinner";
