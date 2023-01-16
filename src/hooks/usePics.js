@@ -11,7 +11,6 @@ export function usePics({ keyword } = { keyword: 'random' }) {
     useEffect(() => {
         setLoading(true)
 
-
         getPics({ keyword, page })
             .then(pics => {
                 setPics(pics)

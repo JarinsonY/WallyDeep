@@ -6,6 +6,7 @@ import Pic from "../Pic"
 import './PicDetailPage.css'
 import DetailPic from "../DetailPic";
 import Spinner from "../Spinner";
+import getRandomPic from "../../services/getRandomPic";
 
 const PicDetailPage = () => {
 
@@ -15,25 +16,37 @@ const PicDetailPage = () => {
     const [error, setError] = useState(false)
 
     const { id } = useParams()
+    const wallyLuck = id === 'wallyluck' ? true : false
 
     useEffect(function () {
         setLoading(true)
-        getSinglePic({ id })
-            .then(img => {
-                setPic(img)
-                setLoading(false)
-            })
-            .catch(e => {
-                setLoading(false)
-                setError(true)
-                /* console.log(e) */
-            })
-    }, [id])
+        wallyLuck
+            ? getRandomPic()
+                .then(img => {
+                    setPic(img)
+                    setLoading(false)
+                })
+                .catch(e => {
+                    setLoading(false)
+                    setError(true)
+                    /* console.log(e) */
+                })
+            : getSinglePic({ id })
+                .then(img => {
+                    setPic(img)
+                    setLoading(false)
+                })
+                .catch(e => {
+                    setLoading(false)
+                    setError(true)
+                    /* console.log(e) */
+                })
+    }, [id, wallyLuck])
 
     return (
         <>
             <HeaderApp />
-            <h3>Image {id}</h3>
+            <h3>{wallyLuck ? 'WallyLuck: You tried your luck and found this...' : `Image ${id}`}</h3>
             <div className="detail">
                 {loading
                     ? <div className="spinner"> <Spinner /> </div>
