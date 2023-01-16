@@ -1,10 +1,14 @@
+import { useHistory } from "react-router-dom";
 import WallyButton from "../WallyButton"
 
 
 const LuckButton = () => {
+    let history = useHistory();
 
     const handleClick = () => {
-        window.location.href = '/pic/wallyluck'
+        history.location.pathname === '/pic/wallyluck'
+            ? window.location.reload()
+            : history.push('/pic/wallyluck')
     }
 
     return (

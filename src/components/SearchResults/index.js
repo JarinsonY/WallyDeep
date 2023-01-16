@@ -2,7 +2,7 @@ import HeaderApp from '../HeaderApp';
 import ListOfPics from "../ListOfPics"
 import ArrowLeft from "../Icons/ArrowLeft"
 import ArrowRight from "../Icons/ArrowRight"
-import { useParams } from "react-router";
+import { useHistory, useLocation, useParams } from "react-router";
 import './SearchResults.css'
 import { usePics } from '../../hooks/usePics';
 import Spinner from "../Spinner";
@@ -11,23 +11,32 @@ import { useEffect } from 'react';
 const SearchResults = () => {
 
     const { keyword } = useParams()
+    let history = useHistory();
+    /* let { search } = useLocation();
+    const query = new URLSearchParams(search);
+    const queryPage = query.get('page');
 
-    /* const [page, setPage] = useState(1) */
+    const pageQuery = queryPage ? parseInt(queryPage) : 1; */
 
-    const { loading, pics, page, setPage } = usePics({ keyword })
+    const { loading, pics, page, setPage } = usePics({ keyword /* , pageQuery */ })
+    localStorage.setItem("lastPage", JSON.stringify(page));
 
     const previousPage = () => {
         setPage(prev => prev - 1)
+        history.replace(`/results/${keyword}?page=${page - 1}`)
+        //query.set('page', page - 1)
         window.scrollTo(0, 0);
     }
     const nextPage = () => {
         setPage(prev => prev + 1)
+        history.replace(`/results/${keyword}?page=${page + 1}`)
+        //query.set('page', page + 1)
         window.scrollTo(0, 0);
     }
 
     useEffect(() => {
         console.log('Page: ' + page)
-    }, [page])
+    }, [page, setPage])
 
     return <>
         <HeaderApp />

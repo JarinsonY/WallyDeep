@@ -6,7 +6,7 @@ const HomePage = () => {
     return (
         <div className="home">
             <h1 className="logo">WallyDeep</h1>
-            <p className="brand">Photo searcher with React and Unsplash</p>
+            <p className="brand">Photo searcher with React and Unsplash API</p>
             <div className='searchDiv'>
                 <SearchBar />
                 <LuckButton />

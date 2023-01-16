@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import LuckButton from "../LuckButton";
 import SearchBar from "../SearchBar"
 import WallyButton from "../WallyButton";
 import './HeaderApp.css'
 
 const Header = ({ backButton = true }) => {
+    let history = useHistory();
 
-    const hanndleBack = () => {
-        window.location.href = '/'
+    const handleBack = () => {
+        history.location.pathname === '/pic/wallyluck'
+            ? history.push('/')
+            : history.goBack()
     }
 
     return (
         <header className="header-content">
             <div className="header-logo">
-                {backButton && <WallyButton className="header-back" onClick={hanndleBack}> ◀ </WallyButton>}
+                {backButton && <WallyButton className="header-back" onClick={handleBack}> ◀ </WallyButton>}
                 <h1 className="brand">
                     <Link to='/' className="logo">
                         WallyDeep
