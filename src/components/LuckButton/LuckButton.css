@@ -1,0 +1,19 @@
+.luck-btn {
+    width: auto;
+    min-height: 35px;
+    padding: 0 1rem;
+    border-radius: 6px;
+    background: black;
+    border: none;
+    color: #fff;
+    font-size: small;
+    font-weight: bold;
+    transition: 0.3s ease all;
+}
+
+.luck-btn:hover {
+    background: linear-gradient(15deg,
+            rgba(52, 8, 100, 1) 0%,
+            rgba(46, 195, 202, 1) 100%);
+    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.15);
+}

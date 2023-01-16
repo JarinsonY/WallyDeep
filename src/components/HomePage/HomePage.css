@@ -22,6 +22,14 @@
     font-size: medium;
 }
 
+.searchDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 .credits{
     font-size: x-small;
     color: rgba(46, 195, 202, 1);
