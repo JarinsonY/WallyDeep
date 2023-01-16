@@ -3,10 +3,13 @@ import getPics from "../services/getPics";
 
 const INITIAL_PAGE = 1;
 
-export function usePics({ keyword } = { keyword: 'random' }) {
+export function usePics({ keyword /* , pageQuery */ } = { keyword: 'random' }) {
     const [loading, setLoading] = useState(false)
     const [pics, setPics] = useState([])
-    const [page, setPage] = useState(INITIAL_PAGE)
+
+    const lastPage = /* pageQuery || */ JSON.parse(localStorage.getItem("lastPage"));
+
+    const [page, setPage] = useState(lastPage || INITIAL_PAGE)
 
     useEffect(() => {
         setLoading(true)

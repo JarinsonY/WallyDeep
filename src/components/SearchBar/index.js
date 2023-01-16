@@ -14,7 +14,8 @@ export default function SearchBar() {
 
 	function handleSubmit(e) {
 		e.preventDefault()
-		history.replace(`/results/${keyword}`)
+		localStorage.setItem("lastPage", JSON.stringify(1));
+		history.replace(`/results/${keyword}?page=1`)
 	}
 
 	return (
