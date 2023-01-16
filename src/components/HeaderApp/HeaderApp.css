@@ -13,10 +13,13 @@
     color: #ffffff;
 }
 
+.header-back {}
+
 .header-logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 .header-logo .logo {
@@ -57,5 +60,16 @@
 @media screen and (max-width: 680px) {
     .header-content {
         display: block;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .header-content {
+        padding: 0 20px;
+    }
+    .header-search{
+        display: flex;
+        flex-direction: column;
+        /* flex-direction: row-reverse; */
     }
 }

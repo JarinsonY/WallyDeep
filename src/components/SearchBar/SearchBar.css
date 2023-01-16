@@ -71,3 +71,9 @@
         rgba(46, 195, 202, 1) 100%
     );
 }
+
+@media screen and (max-width: 1170px) {
+    .search-input {
+        padding: .4rem 2rem;
+    }
+}

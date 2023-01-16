@@ -1,4 +1,5 @@
-import './LuckButton.css'
+import WallyButton from "../WallyButton"
+
 
 const LuckButton = () => {
 
@@ -7,9 +8,9 @@ const LuckButton = () => {
     }
 
     return (
-        <button type="button" className="luck-btn" onClick={handleClick}>
+        <WallyButton onClick={handleClick}>
             Try your luck
-        </button>
+        </WallyButton>
     )
 }
 
